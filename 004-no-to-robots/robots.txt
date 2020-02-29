@@ -1,0 +1,3 @@
+User-agent: *
+Allow :/index.html
+Disallow: /N0-70-g00gl3.html

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>004-Robots know</title>
+</head>
+<body>
+	<h3>Confused ?</h3>
+	<h1>Robots know where it is?</h1>
+	<h3>It helps to hide it from Search Engine Eyes</h2>
+</body>
+</html>
+
+<style type="text/css">
+	@use postcss-preset-env {
+  stage: 0;
+}
+h3,h1,h6{
+	padding-top: 70px;
+	text-align: center;
+	color: black;
+	font-size: 50px;
+}
+
+body {
+  background: linear-gradient(90deg, red, blue);
+  min-height: 100vh;
+  
+  &:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+    right: 0;
+		mask-image: linear-gradient(to bottom, transparent, green);
+		background: linear-gradient(90deg, green, rebeccapurple);	
+  }
+}
+</style>
