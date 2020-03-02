@@ -29,7 +29,7 @@
 
 
     <li>
-      <div class="collapsible-header"><i class="material-icons">assistant_photo</i>Chlnge [*1*] Client side Auth
+      <div id="ch1" class="collapsible-header "><i class="material-icons">assistant_photo</i>Chlnge [*1*] Client side Auth
       	<span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
       </div>
       <div class="collapsible-body"><span>I used to think that Server side Authentication is a Tragedy.But Now I am Realize Client side Authentication is a Comedy </span>
@@ -48,25 +48,58 @@
 
 
      <div class="row">
-    <form class="col s12">
+    <!-- <form class="col s12"> -->
       <div class="row">
         <div class="input-field col s6">
-        <p>Flag:</p>
-          <input placeholder="Enter the Flag" id="first_name" type="text" class="validate">
-           <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-   			 <i class="material-icons right">send</i>
+          <p>Flag</p>
+          <input  placeholder="Enter the Flag" id="i_flag" type="text" class="validate">
+
+
+           <button onclick="check()" class="btn waves-effect waves-light" type="submit" name="action">Submit
+   			   <i class="material-icons right">send</i>
   			</button>
-          <!-- <label for="first_name">First Name</label> -->
+      
+
+
         </div>
-        <!-- <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div> -->
       </div>
-  </form>
+<!--   </form> -->
 </div>
  </div>
     </li>
+
+    <script type="text/javascript">
+
+      function check(){
+        let d_flag = document.getElementById('i_flag').value
+        let element = document.getElementById('ch1')
+        // console.log(d_flag)
+        axios.post('http://localhost:5000/ch1', {
+         flag: d_flag
+       })
+      .then(function (response) {
+        let val = response['data']['status']
+        // console.log(response)
+        if (val === "Success"){
+            console.log("Cool");
+            console.log(element)
+            element.style.textDecoration = "line-through";
+            alert('Challenge 1, Is solved, Contact nearby Event Coordinator to update')       
+        }
+        else
+        {
+          console.log('boooo')
+        }
+        
+       })
+       .catch(function (error) {
+        console.log(error);
+  })
+      }
+    </script>
+
+
+
 
 <!-- Two -->
 
@@ -119,6 +152,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+
 
     <script type="text/javascript">
     	 document.addEventListener('DOMContentLoaded', function() {
@@ -140,7 +175,7 @@
 		/*font-size: 18px;*/
 
 	}
-	.collapsible-body span{
+	.collapsible-body span{event ku yarramy illana 
 		font-size: 20px
 	}
 	.collapsible-header{
