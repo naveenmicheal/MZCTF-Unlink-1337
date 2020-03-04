@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Unlink 1337</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Slab&display=swap" rel="stylesheet">
+  <title>Unlink 1337</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+
+   <!-- ALERTIFY -->
+
+   <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+
+     <script src="md5.js"></script>
 </head>
 <body>
 
-	<nav class=" indigo">
+  <nav class=" indigo">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">UNLINK-1337</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="sass.html">Event Rules</a></li>
-      <!--   <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li> -->
       </ul>
     </div>
   </nav>
@@ -23,342 +30,192 @@
 
 
   <div class="container">
-  	
-  <ul style="padding-top: 30px" class="collapsible popout">
+
+    <div id="web">
+      <h1 id="heading" style="">Web Challenges</h1>
+
+      <ul class="collapsible">
+     <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 1 ><b>Client Side Auth</b></div>
+      <div class="collapsible-body"><span id="dis">
+        I used to think that Server side Authentication is a Tragedy.But Now I am Realize Client side Authentication is a Comedy 
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+         <i class="material-icons right">device_hub</i>
+       </button>
+    </div>
 
 
-
-    <li>
-      <div id="ch1" class="collapsible-header "><i class="material-icons">assistant_photo</i>Chlnge [*1*] Client side Auth
-      	<span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a  href="#!" class="collection-item">What is Authentication?</a>
+        <a href="#!" class="collection-item">How authentication done in web?</a>
+        <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a>
       </div>
-      <div class="collapsible-body"><span>I used to think that Server side Authentication is a Tragedy.But Now I am Realize Client side Authentication is a Comedy </span>
-      	<br>
-      <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-   			 <i class="material-icons right">device_hub</i>
-  	   </button>
 
-  	  <ul>
-  	  	<li id="resource"><a id="resource"  href="#">Resource 1</a></li>
-  	  	<li id="resource"><a id="resource" href="#">Resource two big</a></li>
-  	  	<li id="resource"><a id="resource" href="#">Resource 1</a></li>
-  	  	<li id="resource"><a id="resource"href="#">Resource 1</a></li>
-  	  	<li id="resource"><a id="resource" href="#">Resource 1</a></li>
-  	  </ul>
-
-
-     <div class="row">
-    <!-- <form class="col s12"> -->
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
       <div class="row">
-        <div class="input-field col s6">
-          <p>Flag</p>
-          <input  placeholder="Enter the Flag" id="i_flag" type="text" class="validate">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
 
-
-           <button style="margin-bottom: 10px" onclick="check()" class="btn waves-effect waves-light" type="submit" name="action">Submit
-   			   <i class="material-icons right">send</i>
-  			</button>
-          <p style="color: red;display: none">NO Flag is wrong</p>
-
-
+          <input placeholder="Enter the flag" id="input" type="text" class="validate">
+          <button onclick="c_one()" class="btn red">Submit</button>
         </div>
+ 
       </div>
-<!--   </form> -->
-</div>
- </div>
-    </li>
+    </div>
+
+    </div>
 
     <script type="text/javascript">
+      function c_one(){
+      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
+      let input = document.getElementById('input').value;
+      let input_hash = md5(input)
+      console.log(input)
 
-      function check(){
-        let d_flag = document.getElementById('i_flag').value
-        let element = document.getElementById('ch1')
-        // console.log(d_flag)
-        axios.post('http://localhost:5000/ch1', {
-         flag: d_flag
-       })
-      .then(function (response) {
-        let val = response['data']['status']
-        // console.log(response)
-        if (val === "Success"){
-            console.log("Cool");
-            console.log(element)
-            element.style.textDecoration = "line-through";
-            alert('Challenge 1, Is solved, Contact nearby Event Coordinator to update')       
-        }
-        else
-        {
-          console.log('boooo')
-        }
-        
-       })
-       .catch(function (error) {
-        console.log(error);
-  })
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
       }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
     </script>
+   
+    </li>
 
 
+<!-- TWO -->
 
-
-<!-- Two -->
 
     <li>
-      <div class="collapsible-header"><i class="material-icons">assistant_photo</i>Chlnge [*2*] I Agree Whatever
-      <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
-      </div>
-      <div class="collapsible-body"><span>HTTP is a stateless protocol,so we use some kind of mechanism to maintain session between the requests</span>
-
-        <br>
-
-      <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-   			 <i class="material-icons right">device_hub</i>
-  	   </button>
-
-  	  <ul>
-  	  	<li id="resource"><a id="resource"  href="#">Resource 1</a></li>
-  	  	<li id="resource"><a id="resource" href="#">Resource two big</a></li>
-  	  	<li id="resource"><a id="resource" href="#">Resource 1</a></li>
-  	  	<li id="resource"><a id="resource"href="#">Resource 1</a></li>
-  	  	<li id="resource"><a id="resource" href="#">Resource 1</a></li>
-  	  </ul>
-
-
-     <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-        <p>Flag:</p>
-          <input placeholder="Enter the Flag" id="first_name" type="text" class="validate">
-           <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-   			 <i class="material-icons right">send</i>
-  			</button>
-          <!-- <label for="first_name">First Name</label> -->
-        </div>
-        <!-- <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div> -->
-      </div>
-  </form>
-</div>
- </div>
-    </li>
-
-
-
-<!-- THREE -->
-   <li>
-      <div class="collapsible-header"><i class="material-icons">assistant_photo</i>Chlnge [*3*] Say no to Robots
-      <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
-      </div>
-      <div class="collapsible-body"><span>Sometimes you need to hide your webpages from the eye of search engines</span>
-
-        <br>
-
-      <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-         <i class="material-icons right">device_hub</i>
-       </button>
-
-      <ul>
-        <li id="resource"><a id="resource"  href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource" href="#">Resource two big</a></li>
-        <li id="resource"><a id="resource" href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource"href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource" href="#">Resource 1</a></li>
-      </ul>
-
-
-     <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-        <p>Flag:</p>
-          <input placeholder="Enter the Flag" id="first_name" type="text" class="validate">
-           <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-         <i class="material-icons right">send</i>
-        </button>
-          <!-- <label for="first_name">First Name</label> -->
-        </div>
-        <!-- <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div> -->
-      </div>
-  </form>
-</div>
- </div>
-    </li>
- 
-
-
-<!-- FOUR -->
-
- <li>
-      <div class="collapsible-header"><i class="material-icons">assistant_photo</i>Chlnge [*4*] I Love Google Bots
-      <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
-      </div>
-      <div class="collapsible-body"><span>I am so much happy, when google bot visits my website?
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 2 ><b>I Agree Whatever</b></div>
+      <div class="collapsible-body"><span id="dis">
+        I used to think that Server side Authentication is a Tragedy.But Now I am Realize Client side Authentication is a Comedy 
       </span>
 
-        <br>
-
-      <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
          <i class="material-icons right">device_hub</i>
        </button>
-
-      <ul>
-        <li id="resource"><a id="resource"  href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource" href="#">Resource two big</a></li>
-        <li id="resource"><a id="resource" href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource"href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource" href="#">Resource 1</a></li>
-      </ul>
+    </div>
 
 
-     <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-        <p>Flag:</p>
-          <input placeholder="Enter the Flag" id="first_name" type="text" class="validate">
-           <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-         <i class="material-icons right">send</i>
-        </button>
-          <!-- <label for="first_name">First Name</label> -->
-        </div>
-        <!-- <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div> -->
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a  href="#!" class="collection-item">What is Authentication?</a>
+        <a href="#!" class="collection-item">How authentication done in web?</a>
+        <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a>
       </div>
-  </form>
-</div>
- </div>
-    </li>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+
+          <input placeholder="Enter the flag" id="input" type="text" class="validate">
+          <button onclick="c_one()" class="btn red">Submit</button>
+        </div>
  
-
-
-<hr>
-<h1 style="font-size: 25px; margin-top: 5px;color: white">Cryptography / Numbers</h1>
-
-
-<!-- FIVE -->
-
- <li>
-      <div class="collapsible-header"><i class="material-icons">assistant_photo</i>Chlnge [*5*]Also You Brutus ? :(
-      <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
       </div>
-      <div class="collapsible-body"><span>Can you reverse the encrypted flag into plain text ?
-      </span>
+    </div>
 
-        <br>
+    </div>
 
-      <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-         <i class="material-icons right">device_hub</i>
-       </button>
+    <script type="text/javascript">
+      function c_one(){
+      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
+      let input = document.getElementById('input').value;
+      let input_hash = md5(input)
+      console.log(input)
 
-      <ul>
-        <li id="resource"><a id="resource"  href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource" href="#">Resource two big</a></li>
-        <li id="resource"><a id="resource" href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource"href="#">Resource 1</a></li>
-        <li id="resource"><a id="resource" href="#">Resource 1</a></li>
-      </ul>
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
 
-
-     <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-        <p>Flag:</p>
-          <input placeholder="Enter the Flag" id="first_name" type="text" class="validate">
-           <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-         <i class="material-icons right">send</i>
-        </button>
-          <!-- <label for="first_name">First Name</label> -->
-        </div>
-        <!-- <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div> -->
-      </div>
-  </form>
-</div>
- </div>
+      }
+    
+    </script>
+   
     </li>
 
-
-
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+    </div>
+  
   </div>
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+
+
+
+
+<style type="text/css">
+  #heading{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 50px;
+  }
+  .collapsible-header{
+    font-size: 30px;
+  }
+  #disc,span{  
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+}
+.alertify .ajs-dialog{
+  background-color: green
+}
+.ajs-header{
+  display: none
+}
+.alertify .ajs-footer{
+  background-color: green;
+}
+button.ajs-button.ajs-ok{
+     border: none;
+    background-color: black;
+    color: white; 
+}
+</style>
+
+
 
 
     <script type="text/javascript">
-    	 document.addEventListener('DOMContentLoaded', function() {
-   	 	var chlnge = document.querySelectorAll('.collapsible');
-    	var instances = M.Collapsible.init(chlnge, {});
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, {});
   });
     </script>
-
-<!-- STYLES -->
-<style type="text/css">
-	body{
-		background-color: #222f3e;
-	}
-	.collapsible-body{
-		background-color: #576574;
-		color: white;
-		border: none;
-		font-family: Nunito;
-		/*font-size: 18px;*/
-
-	}
-	.collapsible-body span{
-		font-size: 20px
-	}
-	.collapsible-header{
-		background-color: #ff6b6b;
-		color: white;
-		border-bottom: 4px solid #10ac84;
-		font-weight: bold;
-		font-family: Roboto Slab;
-		letter-spacing: 2px;
-	}
-	.collapsible-header:focus{
-		background-color: #ff6b6b;
-		color: white;
-		border-bottom: 4px solid #10ac84;
-		font-weight: bold;
-		font-family: Roboto Slab;
-		letter-spacing: 2px;
-	}
-	button.btn{
-		margin: 30px;
-	}
-	#resource{
-		display: inline;
-		background-color: black;
-		color: white;
-		padding:10px;
-		border-radius: 3px;
-
-	}
-	#resource:hover{
-		display: inline;
-		background-color: white;
-		color: black;
-		transition:0.6s;
-		padding:10px;
-		border-radius: 3px;
-
-	}
-</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
 </html>
