@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>009</title>
+</head>
+<body>
+	<h3>You Got the Flag</h3>
+	<h3>mzctf{5h4rK-0N-f1R3-1n-W1r3}</h3>
+</body>
+</html>
+
+<style type="text/css">
+	@use postcss-preset-env {
+  stage: 0;
+}
+h3,h1,h6,p{
+	padding-top: 10px;
+	text-align: center;
+	color: black;
+	font-size: 50px;
+}
+
+body {
+  background: linear-gradient(90deg, red, blue);
+  min-height: 100vh;
+  
+  &:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+    right: 0;
+		mask-image: linear-gradient(to bottom, transparent, green);
+		background: linear-gradient(90deg, green, rebeccapurple);	
+  }
+}
+</style>
