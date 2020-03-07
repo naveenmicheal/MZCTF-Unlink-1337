@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unlink 1337</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+   <!-- ALERTIFY -->
+
+   <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+
+     <script src="md5.js"></script>
+</head>
+<body>
+
+  <nav class=" indigo">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">UNLINK-1337</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="sass.html">Event Rules</a></li>
+      </ul>
+    </div>
+  </nav>
+        
+
+
+  <div class="container">
+
+    <div id="web">
+      <h1 id="heading" style="">Web Challenges</h1>
+
+      <ul class="collapsible">
+     <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 1 ><b>Client Side Auth</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
+      </div>
+
+      <div class="collapsible-body"><span id="dis">
+        I used to think that Server side Authentication is a Tragedy.But Now I am Realize Client side Authentication is a Comedy 
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <a target="_blank" href="https://001-c-side-auth.now.sh/"><button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+          <i class="material-icons right">device_hub</i>
+        </button></a>
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Authentication" class="collection-item">What is Authentication?</a>
+      <!--   <a href="#!" class="collection-item">How authentication done in web?</a> -->
+        <a href="https://en.wikipedia.org/wiki/JavaScript" class="collection-item">What is a Javascript</a>
+        <a href="https://developers.google.com/web/tools/chrome-devtools" class="collection-item">Chrome Developer tools</a>
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input id="c1input" type="text" class="validate">
+          <button onclick="c_one()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function c_one(){
+      let flag_hash = '2b7b4ee754687b3eab5c226019af3884';
+      let input = document.getElementById('c1input').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+
+<!-- TWO -->
+
+
+    <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 2 ><b>I Agree Whatever</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+        HTTP is a stateless protocol,so we use some kind of mechanism to maintain session between the requests [*] By the way Everyone Love cookies
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+       <a target="_blank" href="https://i-agree-whatever.herokuapp.com/">
+        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+          <i class="material-icons right">device_hub</i>
+        </button></a>
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie" class="collection-item">HTTP cookie</a>
+        <a target="_blank"  href="http://www.lassosoft.com/Tutorial-Understanding-Cookies-and-Sessions" class="collection-item">Understanding Cookies and Sessions</a>
+        <a href="https://developers.google.com/web/tools/chrome-devtools" class="collection-item">Chrome Developer tools</a>
+      <!--   <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input  id="c2input" type="text" class="validate">
+          <button onclick="c_two()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function c_two(){
+      let flag_hash = '73aedf13ca3fca9a07393ea6c51647fb';
+      let input = document.getElementById('c2input').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 2. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+
+<!-- THIRD -->
+
+
+
+    <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 3 ><b>Robots Know
+      Where it Is?</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         Robots instruct web robots (typically search engine robots) how to crawl pages on their website
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+       <a target="_blank" href="https://robots-know-whereitis.now.sh"><button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+        <i class="material-icons right">device_hub</i>
+      </button></a> 
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="https://developers.google.com/web/tools/chrome-devtools" class="collection-item">Robots exclusion standard</a>
+        <a href="#!" class="collection-item">Chrome Dev Tools</a>
+      <!--   <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input id="c3input" type="text" class="validate">
+          <button onclick="c_three()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function c_three(){
+      let flag_hash = 'daebc8bbc4210530190ae7442964cfed';
+      let input = document.getElementById('c3input').value;
+      let input_hash = md5(input)
+      console.log(`Input Value: ${input} input hash : ${input_hash}`)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 3. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+        console.log(input_hash)
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+
+
+    <!-- FOURTH -->
+
+
+    <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 4 ><b>I love Google Bots</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         I am happy when google bot visiting my website, otherwise I dont, But Do you know how I am find out?
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <a target="_blank" href="https://i-love-googlebot.herokuapp.com/
+        "><button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+          <i class="material-icons right">device_hub</i>
+        </button></a> 
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent" class="collection-item">User-Agent</a>
+        <a target="_blank" href="https://developers.google.com/web/tools/chrome-devtools" class="collection-item">Chrome DevTools</a>
+      <!--   <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input id="c4input" type="text" class="validate">
+          <button onclick="c_four()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function c_four(){
+      let flag_hash = '693e399c53261ff7697bd9ae65831630';
+      let input = document.getElementById('c4input').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+<!-- FIVE -->
+
+  <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 5 ><b>No Debug In Production</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">50 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         Enable Debugging in Production Is So Tempting,But Don't do that? Again I say Don't do It.Ok Whatever. <br> <b>Hint: The flag file located in the flask application root directory</b>
+         <br>
+
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <button onclick="popup()"  class="btn waves-effect waves-light purple darken-3"  name="action">Open Challenge
+         <i class="material-icons right">device_hub</i>
+       </button>
+
+       <script type="text/javascript">
+         function popup(){
+            alertify
+      .alert("Challenge Application live in the Local Network, <b> Contact Nearby Event Coordinators, for the server IP Address. </b> and also disable the proxy in your system", function(){
+      alertify.message('DONE');
+      });
+         }
+       </script>
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="https://palletsprojects.com/p/flask/" class="collection-item">Python Flask Web Framework</a>
+        <a target="_blank" href="https://pythonhosted.org/Flask-Debug/" class="collection-item">Python Flask Debug</a>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Response_header" class="collection-item">Responce headers</a>
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Arbitrary_code_execution" class="collection-item">Arbitrary code execution</a>
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag</p>
+          <input id="c6input" type="text" class="validate">
+          <button onclick="c_five()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function c_five(){
+      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
+      let input = document.getElementById('c6input').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+  </ul>
+    </div>
+  
+  </div>
+
+
+<!-- WEB COMPLETED -->
+
+
+
+<div class="container">
+
+<div id="heading"><h1>Crypto / Number System</h1></div>
+  <ul class="collapsible">
+    <!-- END FIVE -->
+    <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 6 ><b>Also You Brutus</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         Its is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher
+     <br>
+     <p style="text-align: center;" >Can you retrive the flag:[key]: <b>ROT B</b> </p>
+     <p style="text-align: center;" >flags always mzctf{something} format</p> 
+     <br>
+     <p  style="text-align: center; margin-top: 0px; color: #341f97;" >zmpgs{u3yy0-808-4Y1P3-u7h} </p></span>
+
+         <!-- <div style="padding-top: 10px" class="center-align" id="open">
+        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+         <i class="material-icons right">device_hub</i>
+       </button>
+    </div> -->
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="https://en.wikipedia.org/wiki/Cryptography" class="collection-item">What is Mean By Cryptography</a>
+        <a href="https://en.wikipedia.org/wiki/Substitution_cipher" class="collection-item">Substitution cipher</a>
+        <!-- <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag: </p>
+          <input id="ceaserinput" type="text" class="validate">
+          <button onclick="ceaser()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function ceaser(){
+      let flag_hash = 'b76727ee4505c4ed1e9c3d3756fa232e';
+      let input = document.getElementById('ceaserinput').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+    <!-- Seven -->
+
+     <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 7 ><b>Everywhere is a Numbers</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         Can You decode that ? <br>
+         <p style="text-align: center;"><b style="padding-left: 10px;">Hint: ( )64, ( )16, ( )2, ( )16</b></p>
+        <p>The Flag in mzctf{youranswer} format</p>
+        <p style="text-align: center;">bXpjdGY= 7B 01110010 01001111 01101111 00110111 7D</p>
+        </span>
+
+<!-- 
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+         <i class="material-icons right">device_hub</i>
+       </button>
+    </div> -->
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="https://www.learnpolytechnic.com/electronics-engineering/digital-techniques/number-system/" class="collection-item">Number System – Definition </a>
+        <a href="https://en.wikipedia.org/wiki/Base64" class="collection-item">Base64 - Wikipedia</a>
+        <a type="_blank" href="http://www.asciitable.com/" class="collection-item">ASCII</a>
+        <!-- <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag: </p>
+          <input  id="playinput" type="text" class="validate">
+          <!-- <label for=""></label> -->
+          <button onclick="play()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function play(){
+      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
+      let input = document.getElementById('playinput').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+  </ul>
+
+
+</div>
+
+
+<!-- ANALYSIS -->
+
+
+<div class="container">
+
+<div id="heading"><h1>OS / Network Analysis</h1></div>
+  <ul class="collapsible">
+    <!-- END FIVE -->
+    <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 8 ><b>Sharks Likes Internet</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         Analyze the Network Capture file, The flag send into the via HTTP Post Method. Can You filter that?
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <a target="_blank" href="https://drive.google.com/file/d/1_6zimjFm3otXueonUtqBoNh1BPpWXlM3/view?usp=sharing">
+        
+          <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Download .pcap file
+            <i class="material-icons right">device_hub</i>
+          </button>
+        
+        </a> 
+        
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="https://en.wikipedia.org/wiki/Wireshark" class="collection-item">What is a Wireshark</a>
+        <a href="https://www.wireshark.org/docs/man-pages/wireshark-filter.html" class="collection-item">Wireshark Filters</a>
+        <!-- <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input id="wire_in" type="text" class="validate">
+          <button onclick="c_wire()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function c_wire(){
+      let flag_hash = '1ec4b606d5e06b565a7fba61bc9b5182';
+      let input = document.getElementById('wire_in').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+
+     <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 9 ><b>Steal login credentials</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         Download the .pcap file from the download link <a href="#">Download .pcap file</a> <br>
+         Analyze the file, and find out (HTTP POST) packet, <br>
+         Get the login credential from that <br>
+         Open the Challenge website, Login with that 
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <a target="_blank" href="http://http-is-not-secure.herokuapp.com/">
+          <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+         <i class="material-icons right">device_hub</i>
+       </button>
+        </a> 
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="#" class="collection-item">What is Mean By Wireshark</a>
+        <a href="#" class="collection-item">Wireshark filters</a>
+       <!--  <a href="https://en.wikipedia.org/wiki/Playfair_cipher" class="collection-item">Playfair cipher</a> -->
+        <!-- <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input  id="login_input" type="text" class="validate">
+          <button onclick="loginwire()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function loginwire(){
+      let flag_hash = 'f5f3e7e5052e982a7d33754371f4c6c1';
+      let input = document.getElementById('login_input').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+      <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 10 ><b>Version Control System</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         I Accidently commit my files state with flag. After that I am removed flag, and again commit that state.
+         Is my Flag is leaked ?
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <a target="_blank" href="https://drive.google.com/file/d/1zCnzaL2FIlWAfjDJVXV_dPx7TanYYdYg/view?usp=sharing">
+        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Download Git Repository
+         <i class="material-icons right">device_hub</i>
+       </button>
+      </a>
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="https://en.wikipedia.org/wiki/Version_control" class="collection-item">What is a Version control system?</a>
+        <a target="_blank" href="https://www.atlassian.com/git/tutorials/what-is-git" class="collection-item">What is Git?</a>
+        <a target="_blank" href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet/" class="collection-item">How to use Git?</a>
+        <!-- <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input id="git_in" type="text" class="validate">
+          <button onclick="git()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function git(){
+      let flag_hash = '7ba24eef794ed489aca4a35112278cd9';
+      let input = document.getElementById('git_in').value;
+      let input_hash = md5(input)
+      console.log(`Input file hash: ${input_hash}, Actual file Hash ${flag_hash}`)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+  </ul>
+
+
+</div>
+
+
+
+<style type="text/css">
+  #heading{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 50px;
+  }
+  .collapsible-header{
+    font-size: 30px;
+  }
+  #disc,span{  
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+}
+.alertify .ajs-dialog{
+  background-color: green
+}
+.ajs-header{
+  display: none
+}
+.alertify .ajs-footer{
+  background-color: green;
+}
+button.ajs-button.ajs-ok{
+     border: none;
+    background-color: black;
+    color: white; 
+}
+.alertify-notifier .ajs-bottom .ajs-right{
+  background-color: red;
+  color: white
+}
+.collection a.collection-item{
+  color: darkblue;
+}
+
+</style>
+
+
+
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, {});
+  });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
