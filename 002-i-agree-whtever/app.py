@@ -5,11 +5,8 @@ app = Flask(__name__)
 # app.config['SECRET_KEY'] = '112345678'
 TEMPLATES_AUTO_RELOAD = True
 
-@app.route('/')
-def hello_world():
-    return render_template('login.html')
 
-@app.route('/flagpage')
+@app.route('/')
 def flagpage():
 	# print(request)
 	data = request.cookies.get("Admin")
